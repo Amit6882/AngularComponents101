@@ -42,8 +42,10 @@ export class CountdownComponent implements OnInit, OnChanges, OnDestroy{
   }
   
   private clearTimeout() {
-    clearTimeout(this.countdownTimerRef);
-    this.countdownTimerRef = null;
+    if(this.countdownTimerRef) {
+      clearTimeout(this.countdownTimerRef);
+      this.countdownTimerRef = null;
+    }
   }
   
   processCountdown() {
