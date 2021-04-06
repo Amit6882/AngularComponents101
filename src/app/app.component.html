@@ -1,3 +1,7 @@
 <h1>
-  Hello world!
+  <app-progress-bar [progress]="counterProgress"></app-progress-bar>
+  <app-countdown
+    [init]="totalCountdown"
+    (onDecrese)="updateProgress($event)"
+    (onComplete)="countdownFinished()"></app-countdown>
 </h1>
